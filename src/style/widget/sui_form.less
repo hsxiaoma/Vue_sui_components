@@ -1,0 +1,201 @@
+.list-block {
+  .item-content {
+    box-sizing: border-box;
+    padding-left: 0.75rem;
+    min-height: 2.2rem;
+    display: flex;
+    box-pack: justify;
+    justify-content: space-between;
+    justify-content: space-between;
+    box-align: center;
+    align-items: center;
+    .item-media {
+      display: flex;
+      flex-shrink: 0;
+      box-lines: single;
+      flex-wrap: nowrap;
+      box-sizing: border-box;
+      box-align: center;
+      align-items: center;
+      padding-top: 0.35rem;
+      padding-bottom: 0.4rem;
+    }
+    .item-media + .item-inner {
+      margin-left: 0.75rem;
+    }
+    .item-inner {
+      padding-right: 0.75rem;
+      position: relative;
+      width: 100%;
+      padding-top: 0.4rem;
+      padding-bottom: 0.35rem;
+      min-height: 2.2rem;
+      overflow: hidden;
+      box-sizing: border-box;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-flex: 1;
+      -ms-flex: 1;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+      justify-content: space-between;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+    }
+    .item-title-label {
+      width: 35%;
+      flex-shrink: 0;
+      flex: 0 0 auto;
+      margin: 4px 0;
+    }
+    .item-input {
+      width: 100%;
+      margin-top: -0.4rem;
+      margin-bottom: -0.35rem;
+      box-flex: 1;
+      flex: 1;
+      flex-shrink: 1;
+    }
+    input[type="text"],
+    input[type="password"],
+    input[type="search"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="url"],
+    input[type="date"],
+    input[type="datetime-local"],
+    input[type="time"],
+    input[type="number"],
+    select,
+    textarea {
+      appearance: none;
+      box-sizing: border-box;
+      border: none;
+      background: none;
+      border-radius: 0 0 0 0;
+      box-shadow: none;
+      display: block;
+      padding: 0 0 0 0.25rem;
+      margin: 0;
+      width: 100%;
+      height: 2.15rem;
+      color: #3d4145;
+      font-size: 0.85rem;
+      font-family: inherit;
+    }
+    textarea {
+      height: 5rem;
+      resize: none;
+      line-height: 1.4;
+      padding-top: 0.4rem;
+      padding-bottom: 0.35rem;
+    }
+  }
+}
+/* swtich切换 vue的实现方法没想出来 */
+.label-switch {
+  display: inline-block;
+  vertical-align: middle;
+  width: 2.6rem;
+  border-radius: 0.8rem;
+  box-sizing: border-box;
+  height: 1.6rem;
+  position: relative;
+  cursor: pointer;
+  align-self: center;
+  .checkbox {
+    display: block;
+    width: 2.6rem;
+    border-radius: 0.8rem;
+    box-sizing: border-box;
+    height: 1.6rem;
+    background: #e5e5e5;
+    z-index: 0;
+    margin: 0;
+    padding: 0;
+    appearance: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    transition-duration: 300ms;
+  }
+  .checkbox:before {
+    content: ' ';
+    position: absolute;
+    left: 0.1rem;
+    top: 0.1rem;
+    width: 2.4rem;
+    border-radius: 0.8rem;
+    box-sizing: border-box;
+    height: 1.4rem;
+    background: #fff;
+    z-index: 1;
+    transition-duration: 300ms;
+    transform: scale(1);
+  }
+  .checkbox:after {
+    content: ' ';
+    height: 1.4rem;
+    width: 1.4rem;
+    border-radius: 1.4rem;
+    background: #fff;
+    position: absolute;
+    z-index: 2;
+    top: 0.1rem;
+    left: 0.1rem;
+    box-shadow: 0 0.1rem 0.25rem rgba(0, 0, 0, 0.4);
+    transform: translateX(0px);
+    transition-duration: 300ms;
+  }
+}
+input[type="checkbox"] {
+  display: none;
+}
+.label-switch input[type="checkbox"]:checked + .checkbox {
+  background: #4cd964;
+}
+.label-switch input[type="checkbox"]:checked + .checkbox:before {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+.label-switch input[type="checkbox"]:checked + .checkbox:after {
+  -webkit-transform: translateX(1.1rem);
+          transform: translateX(1.1rem);
+}
+
+.icon-form{
+  width: 1.45rem;
+  height: 1.45rem;
+  background: url(../../assets/icons/icons.png);
+  background-size: 350px 350px;
+}
+.icon.icon-form-name {
+  .icon-form;
+  background-position: 310px -5px;
+}
+.icon.icon-form-email {
+  .icon-form;
+  background-position: 269px -5px;
+}
+.icon.icon-form-pwd {
+  .icon-form;
+  background-position: 229px -5px;
+}
+.icon.icon-form-gender {
+  .icon-form;
+  background-position: 188px -5px;
+}
+.icon.icon-form-calendar {
+  .icon-form;
+  background-position: 148px -5px;
+}
+.icon.icon-form-toggle {
+  .icon-form;
+  background-position: 107px -5px;
+}
+.icon.icon-form-comment {
+  .icon-form;
+  background-position: 66px -5px;
+}

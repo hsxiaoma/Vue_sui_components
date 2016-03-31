@@ -1,0 +1,135 @@
+/* 全部按钮样式 */
+.m-btns {
+  margin: 1rem 0;
+}
+.u-btn {
+    border: 1px solid @btn-blue-default;
+    color: @btn-blue-default;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    border-radius: 0.25rem;
+    line-height: 1.25rem;
+    box-sizing: border-box;
+    appearance: none;
+    background: none;
+    padding: 0 0.5rem;
+    margin: 0;
+    height: 1.35rem;
+  /* 文本不允许换行 */
+    white-space: nowrap;
+  /* 省略号代表超过长度的文本内容 */
+    text-overflow: ellipsis;
+    font-size: 0.7rem;
+    font-family: inherit;
+    cursor: pointer;
+}
+.u-btn-default {
+  display: block;
+  width: 100%;
+  position: relative;
+}
+.u-btn-utilbar {
+  .u-btn;
+}
+.u-btn-success {
+  width: 100%;
+  border-color: #4cd964;
+  color: #4cd964;
+}
+.u-btn-danger {
+  width: 100%;
+  border-color: #f6383a;
+  color: #f6383a;
+}
+.u-btn-warning {
+  width: 100%;
+  border-color: #ff6600;
+  color: #ff6600;
+}
+.u-btn-round {
+  width: 100%;
+  border-radius: 1.25rem;
+}
+.u-btn-big {
+  width: 100%;
+  font-size: 0.85rem;
+  height: 2.4rem;
+  line-height: 2.3rem;
+}
+/* 按钮组 */
+.btns-row {
+  align-self: center;
+  display: flex;
+  box-lines: single;
+  lines: single;
+  flex-wrap: nowrap;
+  .u-btn {
+    border-radius: 0 0 0 0;
+    margin-left: -1px;
+    width: 100%;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    border-color: #0894ec;
+    color: #0894ec;
+  }
+  .u-btn:first-child {
+    border-radius: 0.25rem 0 0 0.25rem;
+    margin-left: 0;
+    border-left-width: 1px;
+    border-left-style: solid;
+  }
+  .u-btn:last-child {
+    border-radius: 0 0.25rem 0.25rem 0;
+  }
+  .active {
+    background-color: #0894ec;
+    color: white;
+    z-index: 90;
+  }
+  .u-btn-round:first-child {
+    border-radius: 1.35rem 0 0 1.35rem;
+  }
+  .u-btn-round:last-child {
+    border-radius: 0 1.35rem 1.35rem 0;
+  }
+}
+.u-btn-fill {
+  color: #fff;
+  border: none;
+  line-height: 1.35rem;
+}
+.u-btn-default.u-btn-fill {
+  background-color: #0894ec;
+}
+.u-btn-success.u-btn-fill {
+  background-color: #4cd964;
+}
+.u-btn-success.u-btn-fill:active {
+  background-color: #2ac845;
+}
+.u-btn-warning.u-btn-fill {
+  background-color: #ff6600;
+}
+.u-btn-warning.u-btn-fill:active {
+  background-color: #cc5200;
+}
+.u-btn-danger.u-btn-fill {
+  background-color: #f6383a;
+}
+.u-btn-danger.u-btn-fill:active {
+  background-color: #f00b0d;
+}
+/* 栅格按钮 */
+.row > [class*="col-"] {
+  box-sizing: border-box;
+  float: left;
+}
+.row {
+  overflow: hidden;
+  margin-left: -4%;
+  .col-5 {
+    width: 46%;
+    margin-left: 4%;
+  }
+}
