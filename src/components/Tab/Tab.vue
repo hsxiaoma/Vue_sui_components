@@ -10,7 +10,7 @@
         <tab-item :status="status === 1" @click="status = 1">未发货</tab-item>
         <tab-item :status="status === 2" @click="status = 2">全部订单</tab-item>
       </div>
-      <div class="tab-mark sui-transition" :style="markStyle"></div>
+      <div class="tab-mark sui-transition" :style="{'width': `${100 / (this.$el.querySelectorAll('.tab').length)}%`, 'transform': `translate3d(${(this.status) * 100}%, 0, 0)`}"></div>
       <div class="tab-content">
         <tab-content :status="status === 0">已发货</tab-content>
         <tab-content :status="status === 1">未发货</tab-content>
@@ -27,14 +27,6 @@
     data () {
       return {
         status: 0
-      }
-    },
-    computed: {
-      markStyle () {
-        return {
-          'width': 100 / (this.$el.querySelectorAll('.tab').length) + '%',
-          'transform': `translate3d(${(this.status) * 100}%, 0, 0)`
-        }
       }
     },
     components: {

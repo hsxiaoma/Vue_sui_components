@@ -2,6 +2,7 @@ import App from './App'
 
 import Vue from 'vue'
 import Router from 'vue-router'
+import VueTouch from 'vue-touch'
 
 import Home from './components/Home'
 /* 工具栏和标题栏 */
@@ -26,6 +27,7 @@ import PictureBox from './components/PictureBox/PictureBox'
 import Icons from './components/Icons/Icons'
 
 Vue.use(Router)
+Vue.use(VueTouch)
 
 /* 路由设置 */
 var router = new Router()

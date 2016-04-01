@@ -8,7 +8,7 @@ picker仅仅实现了下拉等基本操作，选中等操作还没实现。
 
 时间比较仓促，前前后后写了三四天，less文件的组织很乱，之后我心情好又有时间就改改吧~
 
-demo的地址稍后几天会通过surge发布上线。
+[demo](http://sad-ball.surge.sh/#!/)
 
 
 ## Build Setup

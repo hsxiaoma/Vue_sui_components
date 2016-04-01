@@ -9,9 +9,9 @@
         确定
       </button>
     </header>
-    <div @mousewheel="move" class="picker-modal-inner picker-items">
-      <div class="picker-items-col picker-items-col-center picker-items-col-normal">
-        <div id="wrap" class="picker-items-col-wrapper" :style="scrollStyle">
+    <div class="picker-modal-inner picker-items">
+      <div id="operation" class="picker-items-col picker-items-col-center picker-items-col-normal">
+        <div id="wrap" class="picker-items-col-wrapper" :style="{'transform': `translate3d(0, ${90 - this.offset + 'px'}, 0)`}">
           <div v-for="item in items" class="picker-item">
             {{ item }}
           </div>
@@ -36,16 +36,12 @@
         default: []
       }
     },
-    computed: {
-      scrollStyle () {
-        return {
-          transform: `translate3d(0, ${90 - this.offset + 'px'}, 0)`
-        }
-      }
-    },
     methods: {
       cancel () {
         this.$dispatch('cancel')
+      },
+      startMove () {
+        console.log('Start!')
       },
       move (e) {
         let h = document.querySelectorAll('#wrap')[0].offsetHeight - e.target.offsetHeight
@@ -59,7 +55,16 @@
         if (this.offset === 0) {
         }
         e.stopPropagation()
+      },
+      endMove () {
+        console.log('End!')
       }
+    },
+    ready () {
+      let op = document.getElementById('operation')
+      op.addEventListener('touchstart', this.startMove)
+      op.addEventListener('touchmove', this.move)
+      op.addEventListener('touchend', this.endMove)
     }
   }
 </script>
