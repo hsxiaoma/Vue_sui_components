@@ -17,7 +17,7 @@
           <li><a v-link="{name: 'Dialog'}" class="u-item" href="javascript:;">对话框<i class="icon-arrow"></i></a></li>
           <li><a v-link="{name: 'OTable'}" class="u-item" href="javascript:;">操作表<i class="icon-arrow"></i></a></li>
           <li><a v-link="{name: 'Calendar'}" class="u-item" href="javascript:;">日历<i class="icon-arrow"></i></a></li>         
-          <li><a v-link="{name: 'Picker'}" class="u-item" href="javascript:;">picker (未完成)<i class="icon-arrow"></i></a></li>
+          <li><a v-link="{name: 'Picker'}" class="u-item" href="javascript:;">picker<i class="icon-arrow"></i></a></li>
           <li><a v-link="{name: 'Slide'}" class="u-item" href="javascript:;">幻灯片<i class="icon-arrow"></i></a></li>
           <li><a v-link="{name: 'PictureBox'}" class="u-item" href="javascript:;">图片浏览器<i class="icon-arrow"></i></a></li>
           <li><a class="u-item" href="javascript:;">下拉刷新<i class="icon-arrow"></i></a></li>
