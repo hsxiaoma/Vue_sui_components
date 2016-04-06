@@ -2,13 +2,11 @@
 
 模仿淘宝SUI_UI组件，用vue的形式实现了一遍轮子。
 
-tab选项卡存在一个小bug尚未解决。
-
-picker仅仅实现了下拉等基本操作，选中等操作还没实现。
+大部分组件都已经实现，有兴趣的同学可以看看代码啦~
 
 时间比较仓促，前前后后写了三四天，less文件的组织很乱，之后我心情好又有时间就改改吧~
 
-[demo](http://grubby-field.surge.sh/#!/)
+[demo](http://abusive-trade.surge.sh/#!/)
 
 
 ## Build Setup
