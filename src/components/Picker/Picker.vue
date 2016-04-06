@@ -7,6 +7,7 @@
     <div class="content f-no-btm">
       <div class="content-pad">
         <a href="javascript:;" @click="status = true">商品列表</a>
+        <div>您选择了：{{ phone }}</div>
       </div>
     </div>
     <pic
@@ -26,7 +27,8 @@
       return {
         status: false,
         items: ['iPhone4', 'iPhone4S', 'iPhone5', 'iPhone5S',
-'iPhone6', 'iPhone6S', 'iPad2', 'iPad Retina', 'iPad Air']
+'iPhone6', 'iPhone6S', 'iPad2', 'iPad Retina', 'iPad Air'],
+        phone: ''
       }
     },
     components: {
@@ -35,6 +37,9 @@
     events: {
       cancel () {
         this.status = false
+      },
+      showThePhone (phone) {
+        this.phone = phone
       }
     }
   }

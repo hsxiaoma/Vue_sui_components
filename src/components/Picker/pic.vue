@@ -11,8 +11,8 @@
     </header>
     <div class="picker-modal-inner picker-items">
       <div id="operation" class="picker-items-col picker-items-col-center picker-items-col-normal">
-        <div id="wrap" class="picker-items-col-wrapper" :style="{'transform': `translate3d(0, ${90 - this.offset + 'px'}, 0)`}">
-          <div v-for="item in items" class="picker-item">
+        <div id="wrap" class="picker-items-col-wrapper" :style="{'transform': `translate3d(0, ${90 + this.offset + 'px'}, 0)`}">
+          <div v-for="item in items" class="picker-item" :class="{ 'picker-checked': $index === index }">
             {{ item }}
           </div>
         </div>
@@ -26,7 +26,9 @@
   export default {
     data () {
       return {
-        offset: 0
+        offset: 0,
+        currentY: 0,
+        index: 0
       }
     },
     props: {
@@ -40,24 +42,34 @@
       cancel () {
         this.$dispatch('cancel')
       },
-      startMove () {
-        console.log('Start!')
+      startMove (e) {
+        this.currentY = e.touches[0].clientY
       },
       move (e) {
-        let h = document.querySelectorAll('#wrap')[0].offsetHeight - e.target.offsetHeight
-        this.offset += e.deltaY
-        if (this.offset < 0) {
-          this.offset = 0
-        }
-        if (this.offset > h) {
-          this.offset = h
-        }
-        if (this.offset === 0) {
-        }
-        e.stopPropagation()
+        this.offset += e.touches[0].clientY - this.currentY
+        this.currentY = e.touches[0].clientY
       },
       endMove () {
-        console.log('End!')
+        if (this.offset > 0) {
+          this.offset = 0
+          this.index = 0
+          this.$dispatch('showThePhone', this.items[0])
+          return
+        }
+        if (this.offset < -290) {
+          this.offset = -290
+          this.index = this.items.length - 1
+          this.$dispatch('showThePhone', this.items[this.items.length - 1])
+          return
+        }
+        if (this.offset % 36 !== 0) {
+          console.log(Math.ceil((-this.offset) / 36))
+          this.index = Math.ceil((-this.offset) / 36)
+          this.offset = -this.index * 36
+          this.$dispatch('showThePhone', this.items[this.index])
+          return
+        }
+        console.log(this.offset)
       }
     },
     ready () {
